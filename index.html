@@ -1,50 +1,106 @@
-cat > index.html << 'EOF'
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>NFL Dictionary</title>
+
   <style>
     body {
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       margin: 60px;
       max-width: 960px;
+      background: #ffffff;
+      color: #111;
     }
-    h1 { margin-bottom: 10px; }
-    p { color: #555; }
+
+    h1 {
+      font-size: 44px;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    p.subtitle {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 28px;
+    }
+
     a.button {
       display: inline-block;
-      margin-top: 20px;
-      padding: 14px 22px;
+      padding: 14px 24px;
       background: #111;
       color: #fff;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 10px;
       font-size: 18px;
+      font-weight: 500;
+      transition: background 0.2s ease;
     }
-    a.button:hover { background: #333; }
+
+    a.button:hover {
+      background: #333;
+    }
+
+    .footer {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid #eee;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .author {
+      font-size: 15px;
+      color: #444;
+    }
+
+    .links a {
+      margin-right: 18px;
+      font-size: 15px;
+      color: #111;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
     .update {
-      margin-top: 30px;
+      font-size: 13px;
       color: #777;
-      font-size: 14px;
     }
   </style>
 </head>
+
 <body>
   <h1>NFL Dictionary</h1>
-  <p>Advanced NFL analytics & quarterback dashboards.</p>
+  <p class="subtitle">
+    Advanced NFL analytics & quarterback dashboards.
+  </p>
 
   <a class="button" href="https://nfldictionary.github.io/qb_dashboards/">
     → View QB Dashboards (2025)
   </a>
 
-  <div class="update">
-    Last updated:
-    <script>
-      document.write(new Date().toISOString().slice(0,10));
-    </script>
+  <div class="footer">
+    <div class="author">
+      Created by <strong>@nfl_dictionary</strong>
+    </div>
+
+    <div class="links">
+      <a href="https://www.instagram.com/nfl_dictionary/" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com/@nfl_dictionary" target="_blank">YouTube</a>
+    </div>
+
+    <div class="update">
+      Last updated:
+      <script>
+        document.write(new Date().toISOString().slice(0,10));
+      </script>
+    </div>
   </div>
 </body>
 </html>
-EOF
