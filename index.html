@@ -10,97 +10,107 @@
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       margin: 60px;
       max-width: 960px;
-      background: #ffffff;
       color: #111;
     }
 
-    h1 {
-      font-size: 44px;
-      margin-bottom: 8px;
-      letter-spacing: -0.5px;
+    /* Top logo */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 30px;
     }
 
-    p.subtitle {
+    .brand img {
+      height: 70px;
+      width: auto;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 36px;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      margin-top: 8px;
       font-size: 18px;
       color: #555;
-      margin-bottom: 28px;
     }
 
-    a.button {
+    /* Main button */
+    .main-button {
       display: inline-block;
-      padding: 14px 24px;
+      margin-top: 28px;
+      padding: 16px 26px;
       background: #111;
       color: #fff;
       text-decoration: none;
       border-radius: 10px;
-      font-size: 18px;
-      font-weight: 500;
-      transition: background 0.2s ease;
+      font-size: 20px;
+      font-weight: 600;
     }
 
-    a.button:hover {
+    .main-button:hover {
       background: #333;
     }
 
-    .footer {
-      margin-top: 60px;
-      padding-top: 24px;
-      border-top: 1px solid #eee;
+    /* Social section */
+    .socials {
       display: flex;
-      flex-direction: column;
-      gap: 12px;
+      align-items: center;
+      gap: 22px;
+      margin-top: 36px;
     }
 
-    .author {
-      font-size: 15px;
-      color: #444;
-    }
-
-    .links a {
-      margin-right: 18px;
-      font-size: 15px;
-      color: #111;
+    .socials a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       text-decoration: none;
+      color: #111;
+      font-size: 16px;
       font-weight: 500;
     }
 
-    .links a:hover {
-      text-decoration: underline;
+    .socials img {
+      height: 32px;
+      width: auto;
     }
 
-    .update {
-      font-size: 13px;
+    .socials a:hover {
+      opacity: 0.75;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 50px;
+      font-size: 14px;
       color: #777;
     }
   </style>
 </head>
 
 <body>
-  <h1>NFL Dictionary</h1>
-  <p class="subtitle">
-    Advanced NFL analytics & quarterback dashboards.
-  </p>
 
-  <a class="button" href="https://nfldictionary.github.io/qb_dashboards/">
+  <!-- Brand / Logo -->
+  <div class="brand">
+    <img src="assets/logo_2.png" alt="NFL Dictionary Logo">
+    <div>
+      <h1>NFL Dictionary</h1>
+      <div class="subtitle">
+        Advanced NFL analytics & quarterback dashboards
+      </div>
+    </div>
+  </div>
+
+  <!-- Main CTA -->
+  <a class="main-button" href="https://nfldictionary.github.io/qb_dashboards/">
     → View QB Dashboards (2025)
   </a>
 
-  <div class="footer">
-    <div class="author">
-      Created by <strong>@nfl_dictionary</strong>
-    </div>
-
-    <div class="links">
-      <a href="https://www.instagram.com/nfl_dictionary/" target="_blank">Instagram</a>
-      <a href="https://www.youtube.com/@nfl_dictionary" target="_blank">YouTube</a>
-    </div>
-
-    <div class="update">
-      Last updated:
-      <script>
-        document.write(new Date().toISOString().slice(0,10));
-      </script>
-    </div>
-  </div>
-</body>
-</html>
+  <!-- Social links -->
+  <div class="socials">
+    <a href="https://www.instagram.com/nfl_dictionary/" target="_blank">
+      <img src="assets/instagram.png" alt="Instagram">
+      <span>@nfl_dictionary</span>
