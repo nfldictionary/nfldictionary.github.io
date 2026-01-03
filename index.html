@@ -4,113 +4,155 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>NFL Dictionary</title>
-
   <style>
-    body {
+    :root{
+      --text:#111;
+      --muted:#555;
+      --muted2:#777;
+      --bg:#fff;
+      --btn:#111;
+      --btn2:#333;
+      --card:#fafafa;
+      --border:rgba(0,0,0,0.10);
+    }
+    body{
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       margin: 60px;
-      max-width: 960px;
-      color: #111;
+      max-width: 980px;
+      background: var(--bg);
+      color: var(--text);
     }
-
-    /* Top logo */
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      margin-bottom: 30px;
+    .top{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      margin-bottom: 8px;
     }
-
-    .brand img {
-      height: 70px;
-      width: auto;
+    .brand-logo{
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      display:block;
     }
-
-    h1 {
-      margin: 0;
-      font-size: 36px;
-      font-weight: 700;
+    h1{
+      margin:0;
+      font-size: 44px;
+      letter-spacing: -0.6px;
+      line-height: 1.05;
     }
-
-    .subtitle {
-      margin-top: 8px;
+    .subtitle{
+      margin: 8px 0 0;
+      color: var(--muted);
       font-size: 18px;
-      color: #555;
     }
 
-    /* Main button */
-    .main-button {
-      display: inline-block;
-      margin-top: 28px;
-      padding: 16px 26px;
-      background: #111;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 10px;
-      font-size: 20px;
-      font-weight: 600;
+    .cta-wrap{
+      margin-top: 22px;
     }
-
-    .main-button:hover {
-      background: #333;
+    a.button{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 14px 22px;
+      background: var(--btn);
+      color:#fff;
+      text-decoration:none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 650;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
     }
+    a.button:hover{ background: var(--btn2); }
 
-    /* Social section */
-    .socials {
-      display: flex;
+    .social{
+      margin-top: 26px;
+      display:flex;
+      gap: 18px;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 22px;
-      margin-top: 36px;
     }
-
-    .socials a {
-      display: inline-flex;
-      align-items: center;
+    .social-link{
+      display:inline-flex;
+      align-items:center;
       gap: 10px;
-      text-decoration: none;
-      color: #111;
-      font-size: 16px;
-      font-weight: 500;
+      text-decoration:none;
+      color: var(--text);
+      font-weight: 650;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+    .social-link:hover{ text-decoration: underline; }
+
+    .social-icon{
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      display:inline-block;
+    }
+    .handle{
+      font-weight: 650;
     }
 
-    .socials img {
-      height: 32px;
-      width: auto;
-    }
-
-    .socials a:hover {
-      opacity: 0.75;
-    }
-
-    /* Footer */
-    .footer {
-      margin-top: 50px;
+    .footer{
+      margin-top: 26px;
+      color: var(--muted2);
       font-size: 14px;
-      color: #777;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items:center;
+    }
+    .dot{ opacity: 0.6; }
+    .author{
+      color: var(--muted2);
+      font-weight: 650;
     }
   </style>
 </head>
-
 <body>
 
-  <!-- Brand / Logo -->
-  <div class="brand">
-    <img src="assets/logo_2.png" alt="NFL Dictionary Logo">
+  <div class="top">
+    <img class="brand-logo" src="assets/logo_2.png" alt="NFL Dictionary logo">
     <div>
       <h1>NFL Dictionary</h1>
-      <div class="subtitle">
-        Advanced NFL analytics & quarterback dashboards
-      </div>
+      <div class="subtitle">Advanced NFL analytics &amp; quarterback dashboards</div>
     </div>
   </div>
 
-  <!-- Main CTA -->
-  <a class="main-button" href="https://nfldictionary.github.io/qb_dashboards/">
-    → View QB Dashboards (2025)
-  </a>
+  <div class="cta-wrap">
+    <a class="button" href="https://nfldictionary.github.io/qb_dashboards/">
+      → View QB Dashboards (2025)
+    </a>
+  </div>
 
-  <!-- Social links -->
-  <div class="socials">
-    <a href="https://www.instagram.com/nfl_dictionary/" target="_blank">
-      <img src="assets/instagram.png" alt="Instagram">
-      <span>@nfl_dictionary</span>
+  <div class="social">
+    <a class="social-link" href="https://www.instagram.com/nfl_dictionary/" target="_blank" rel="noopener">
+      <img class="social-icon" src="assets/instagram.png" alt="Instagram">
+      <span class="handle">@nfl_dictionary</span>
+    </a>
+
+    <a class="social-link" href="https://www.youtube.com/@nfl_dictionary" target="_blank" rel="noopener">
+      <img class="social-icon" src="assets/youtube.png" alt="YouTube">
+      <span class="handle">@nfl_dictionary</span>
+    </a>
+  </div>
+
+  <div class="footer">
+    <span class="author">Created by @nfl_dictionary</span>
+    <span class="dot">•</span>
+    <span>Last updated: <span id="last-updated"></span></span>
+  </div>
+
+  <script>
+    // YYYY-MM-DD in visitor local time
+    const d = new Date();
+    const yyyy = d.getFullYear();
+    const mm = String(d.getMonth() + 1).padStart(2, "0");
+    const dd = String(d.getDate()).padStart(2, "0");
+    document.getElementById("last-updated").textContent = `${yyyy}-${mm}-${dd}`;
+  </script>
+
+</body>
+</html>
