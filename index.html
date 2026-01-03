@@ -22,7 +22,6 @@
       background: var(--bg);
       color: var(--text);
     }
-
     .top{
       display:flex;
       align-items:center;
@@ -30,8 +29,8 @@
       margin-bottom: 8px;
     }
     .brand-logo{
-      width: 68px;
-      height: 68px;
+      width: 64px;
+      height: 64px;
       object-fit: contain;
       display:block;
     }
@@ -47,7 +46,9 @@
       font-size: 18px;
     }
 
-    .cta-wrap{ margin-top: 22px; }
+    .cta-wrap{
+      margin-top: 22px;
+    }
     a.button{
       display:inline-flex;
       align-items:center;
@@ -66,7 +67,7 @@
     .social{
       margin-top: 26px;
       display:flex;
-      gap: 14px;
+      gap: 18px;
       flex-wrap: wrap;
       align-items: center;
     }
@@ -77,55 +78,47 @@
       text-decoration:none;
       color: var(--text);
       font-weight: 650;
-      padding: 10px 12px;
+      padding: 8px 10px;
       border-radius: 12px;
       border: 1px solid var(--border);
       background: var(--card);
-      line-height: 1;
     }
-    .social-link:hover{
-      transform: translateY(-1px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    }
+    .social-link:hover{ text-decoration: underline; }
 
     .social-icon{
       width: 28px;
       height: 28px;
       object-fit: contain;
       display:inline-block;
-      flex: 0 0 auto;
     }
-    .handle{ font-weight: 700; }
-    .label{
-      color: var(--muted);
-      font-weight: 600;
-      margin-left: 6px;
-      font-size: 13px;
+    .handle{
+      font-weight: 650;
     }
 
     .footer{
       margin-top: 26px;
       color: var(--muted2);
       font-size: 14px;
-      display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items:center;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
-    .dot{ opacity: 0.6; }
     .author{
+      font-weight: 650;
       color: var(--muted2);
-      font-weight: 700;
+    }
+    .updated{
+      color: #888;
     }
   </style>
 </head>
 <body>
 
   <div class="top">
-    <img class="brand-logo" src="assets/logo_2.png?v=2" alt="NFL Dictionary logo">
+    <img class="brand-logo" src="assets/logo_2.png" alt="NFL Dictionary logo">
     <div>
       <h1>NFL Dictionary</h1>
-      <div class="subtitle">Advanced NFL analytics &amp; quarterback dashboards</div>
+      <div class="subtitle">Advanced NFL analytics</div>
     </div>
   </div>
 
@@ -137,20 +130,19 @@
 
   <div class="social">
     <a class="social-link" href="https://www.instagram.com/nfl_dictionary/" target="_blank" rel="noopener">
-      <img class="social-icon" src="assets/instagram.png?v=2" alt="Instagram">
-      <span class="handle">@nfl_dictionary</span><span class="label">Instagram</span>
+      <img class="social-icon" src="assets/instagram.png" alt="Instagram">
+      <span class="handle">@nfl_dictionary</span>
     </a>
 
     <a class="social-link" href="https://www.youtube.com/@nfl_dictionary" target="_blank" rel="noopener">
-      <img class="social-icon" src="assets/youtube.png?v=2" alt="YouTube">
-      <span class="handle">@nfl_dictionary</span><span class="label">YouTube</span>
+      <img class="social-icon" src="assets/youtube.png" alt="YouTube">
+      <span class="handle">@nfl_dictionary</span>
     </a>
   </div>
 
   <div class="footer">
-    <span class="author">@nfl_dictionary — MBC Sports+ NFL commentator</span>
-    <span class="dot">•</span>
-    <span>Last updated: <span id="last-updated"></span></span>
+    <div class="author">Created by @nfl_dictionary — MBC Sports+ NFL commentator</div>
+    <div class="updated">Last updated: <span id="last-updated"></span></div>
   </div>
 
   <script>
