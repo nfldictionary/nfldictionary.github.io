@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>NFL Dictionary</title>
 
-  
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
   <meta http-equiv="Pragma" content="no-cache"/>
   <meta http-equiv="Expires" content="0"/>
@@ -20,7 +19,6 @@
       --btn2:#333;
       --card:#fafafa;
       --border:rgba(0,0,0,0.10);
-      --pill: rgba(0,0,0,0.06);
     }
     body{
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -60,7 +58,7 @@
       flex-wrap: wrap;
       align-items:center;
     }
-    a.button, button.button{
+    a.button{
       display:inline-flex;
       align-items:center;
       gap:10px;
@@ -72,20 +70,8 @@
       font-size: 18px;
       font-weight: 650;
       box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-      border: none;
-      cursor: pointer;
     }
-    a.button:hover, button.button:hover{ background: var(--btn2); }
-
-    button.ghost{
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
-      box-shadow: none;
-    }
-    button.ghost:hover{
-      background: var(--card);
-    }
+    a.button:hover{ background: var(--btn2); }
 
     .social{
       margin-top: 26px;
@@ -122,38 +108,19 @@
       font-size: 14px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
     }
     .author{
       font-weight: 650;
       color: var(--muted2);
     }
-    .updated{
-      color: #888;
-      display:flex;
-      gap: 10px;
-      align-items:center;
-      flex-wrap: wrap;
-    }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap: 6px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: var(--pill);
-      border: 1px solid var(--border);
-      color: rgba(0,0,0,0.70);
-      font-size: 12px;
-      font-weight: 650;
-    }
-    code{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+    .updated{ color:#888; }
   </style>
 </head>
 <body>
 
   <div class="top">
-    <img class="brand-logo" src="assets/logo_2.png?v=20260112a" alt="NFL Dictionary logo">
+    <img class="brand-logo" src="assets/logo_2.png" alt="NFL Dictionary logo">
     <div>
       <h1>NFL Dictionary</h1>
       <div class="subtitle">Advanced NFL analytics</div>
@@ -164,32 +131,23 @@
     <a class="button" href="https://nfldictionary.github.io/qb_dashboards/">
       → View QB Dashboards (2025)
     </a>
-
-    <button class="button ghost" id="hard-refresh-btn" type="button">
-      Reload (cache-bust)
-    </button>
   </div>
 
   <div class="social">
     <a class="social-link" href="https://www.instagram.com/nfl_dictionary/" target="_blank" rel="noopener">
-      <img class="social-icon" src="assets/instagram.png?v=20260112a" alt="Instagram">
+      <img class="social-icon" src="assets/instagram.png" alt="Instagram">
       <span class="handle">@nfl_dictionary</span>
     </a>
 
     <a class="social-link" href="https://www.youtube.com/@nfl_dictionary" target="_blank" rel="noopener">
-      <img class="social-icon" src="assets/youtube.png?v=20260112a" alt="YouTube">
+      <img class="social-icon" src="assets/youtube.png" alt="YouTube">
       <span class="handle">@nfl_dictionary</span>
     </a>
   </div>
 
   <div class="footer">
     <div class="author">Created by NFL잡학사전 - MBC Sports+ NFL commentator</div>
-
-    <div class="updated">
-      <div>Last updated: <span id="last-updated"></span></div>
-      <span class="pill">Build <code id="build-id">20260112a</code></span>
-      <span class="pill">URL <code id="page-url"></code></span>
-    </div>
+    <div class="updated">Last updated: <span id="last-updated"></span></div>
   </div>
 
   <script>
@@ -198,14 +156,6 @@
     const mm = String(d.getMonth() + 1).padStart(2, "0");
     const dd = String(d.getDate()).padStart(2, "0");
     document.getElementById("last-updated").textContent = `${yyyy}-${mm}-${dd}`;
-
-    document.getElementById("page-url").textContent = location.pathname + location.search;
-
-    document.getElementById("hard-refresh-btn").addEventListener("click", () => {
-      const u = new URL(location.href);
-      u.searchParams.set("cb", String(Date.now()));
-      location.replace(u.toString());
-    });
   </script>
 
 </body>
